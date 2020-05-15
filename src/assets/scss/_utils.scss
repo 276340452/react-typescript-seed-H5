@@ -1,0 +1,78 @@
+@import './mixins/clearfix';
+@import './variables';
+
+.mg-auto {
+  margin: auto;
+}
+/*css为clearfix，清除浮动*/
+.clearfix {
+  @include clearfix();
+}
+/*单行溢出*/
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*多行溢出 手机端使用*/
+.txt-cut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.bold {
+  font-weight: bold;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.whole-row {
+  width: 100%;
+}
+.flex-1 {
+  flex: 1;
+}
+.display-flex-absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+}
+.ribbon {
+  background-color: var(--warning-color);
+  left: -3.5em;
+  transform: rotate(-45deg);
+  overflow: hidden;
+  position: absolute;
+  top: 30px;
+  white-space: nowrap;
+  width: 15em;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0.5;
+  span {
+    color: white;
+    display: block;
+    font-weight: 400;
+    margin: 1px 0;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    pointer-events: none;
+  }
+}

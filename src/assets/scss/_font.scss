@@ -1,0 +1,6 @@
+@each $i in 12,14,16,20,24,30,38,46,56,68 {
+  .ft-#{$i} {
+    font-size: #{$i}px !important;
+    line-height: #{$i+8}px !important;
+  }
+}

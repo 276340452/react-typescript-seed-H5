@@ -1,0 +1,9 @@
+!.eslintrc.js
+src/serviceWorker.ts
+*.test.js
+src/assets/*
+config/*
+scripts/*
+node_env.js
+color.js
+environment/*
