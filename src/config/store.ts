@@ -3,7 +3,6 @@ import promiseMiddleware from 'redux-promise-middleware';
 import thunkMiddleware from 'redux-thunk';
 import reducer, { IRootState } from 'shared/reducers';
 import loggerMiddleware from './logger-middleware';
-import Devtools from './devtools';
 
 const defaultMiddlewares = [
   promiseMiddleware,
@@ -14,7 +13,6 @@ const composedMiddlewares = (middlewares: Array<any>) => {
   if (process.env.NODE_ENV === 'development') {
     return compose(
       applyMiddleware(...defaultMiddlewares, ...middlewares),
-      Devtools.instrument(),
     );
   }
   return compose(
