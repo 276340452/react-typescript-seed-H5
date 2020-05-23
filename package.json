@@ -4,14 +4,18 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
-    "build": "cross-env NODE_ENV=product node node_env.js & npm run theme && node scripts/build.js",
-    "build:dev": "npm run dev & npm run theme && node scripts/build.js",
+    "env:dev": "cross-env NODE_ENV=development node node_env -p",
+    "env:pro": "cross-env NODE_ENV=production node node_env -p",
+    "prebuild": "npm run theme",
+    "build": "node scripts/build.js",
     "lint": "eslint --ext .ts --ext .tsx src",
     "lint-fix": "eslint --fix --ext .ts --fix --ext .tsx src",
-    "start": "npm run dev & npm run theme && node scripts/start.js",
-    "dev": "cross-env NODE_ENV=development node node_env.js",
+    "prestart": "npm run theme",
+    "start": "node scripts/start.js",
     "test": "node scripts/test.js",
-    "theme": "node color"
+    "theme": "node color",
+    "premock": "apidoc -i mock/ -o doc/",
+    "mock": "node mock"
   },
   "husky": {
     "hooks": {
@@ -173,6 +177,7 @@
     "lint-staged": "^10.0.8",
     "log-symbols": "^4.0.0",
     "merge-jsons-webpack-plugin": "^1.0.20",
+    "mockjs": "^1.1.0",
     "node-sass": "^4.13.1"
   }
 }

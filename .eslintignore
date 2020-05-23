@@ -1,4 +1,4 @@
-!.eslintrc.js
+.eslintrc.js
 src/serviceWorker.ts
 *.test.js
 src/assets/*
