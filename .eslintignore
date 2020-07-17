@@ -7,3 +7,4 @@ scripts/*
 node_env.js
 color.js
 environment/*
+public/*
