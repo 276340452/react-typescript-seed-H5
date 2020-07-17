@@ -8,11 +8,11 @@
     "env:pro": "cross-env NODE_ENV=production node node_env -p",
     "prebuild": "npm run theme",
     "build": "node scripts/build.js",
-    "analyzer": "npm_config_report=true node scripts/build.js",
+    "analyzer": "cross-env npm_config_report=true node scripts/build.js",
     "lint": "eslint --ext .ts --ext .tsx src",
     "lint-fix": "eslint --fix --ext .ts --fix --ext .tsx src",
     "prestart": "npm run theme",
-    "start": "npm_config_report=true node scripts/start.js",
+    "start": "cross-env npm_config_report=true node scripts/start.js",
     "test": "node scripts/test.js",
     "theme": "node color",
     "mock": "ts-node mock"
