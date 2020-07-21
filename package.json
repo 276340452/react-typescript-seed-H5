@@ -4,8 +4,8 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
-    "env:dev": "cross-env NODE_ENV=development node node_env -p",
-    "env:pro": "cross-env NODE_ENV=production node node_env -p",
+    "env:dev": "cross-env NODE_ENV=development node node_env",
+    "env:pro": "cross-env NODE_ENV=production node node_env",
     "prebuild": "npm run theme",
     "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
     "prealpha": "npm run theme",
@@ -171,7 +171,6 @@
     "antd-theme-generator": "^1.1.9",
     "babel-plugin-import": "^1.13.0",
     "chalk": "^4.0.0",
-    "commander": "^5.1.0",
     "cross-env": "^7.0.2",
     "eslint-config-airbnb-typescript": "^7.0.0",
     "eslint-import-resolver-typescript": "^2.0.0",
