@@ -696,7 +696,11 @@ module.exports = function(webpackEnv) {
               { pattern: "src/i18n/zh-cn/*.json", fileName: "./i18n/zh-cn.json" }
           ]}
         }),
-        npm_config_report && new BundleAnalyzerPlugin(),
+        npm_config_report && new BundleAnalyzerPlugin({
+          analyzerMode: 'static',
+          reportFilename: 'report.html',
+          openAnalyzer: false
+        }),
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell webpack to provide empty mocks for them so importing them works.
