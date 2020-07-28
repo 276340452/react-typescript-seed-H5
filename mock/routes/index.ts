@@ -1,4 +1,4 @@
-const { SwaggerRouter } = require('koa-swagger-decorator');
+import { SwaggerRouter } from 'koa-swagger-decorator';
 
 const swaggerRouter = new SwaggerRouter();
 
@@ -40,4 +40,4 @@ swaggerRouter.swagger({
 
 swaggerRouter.mapDir(__dirname, {});
 
-module.exports = swaggerRouter;
+export default swaggerRouter;

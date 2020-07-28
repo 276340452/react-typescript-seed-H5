@@ -4,8 +4,6 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
-    "env:dev": "cross-env NODE_ENV=development node node_env",
-    "env:pro": "cross-env NODE_ENV=production node node_env",
     "prebuild": "npm run theme",
     "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
     "prealpha": "npm run theme",
@@ -17,7 +15,7 @@
     "start": "cross-env npm_config_report=true node scripts/start.js",
     "test": "node scripts/test.js",
     "theme": "node color",
-    "mock": "ts-node mock"
+    "mock": "ts-node --project mock/tsconfig.json mock"
   },
   "husky": {
     "hooks": {

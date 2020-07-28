@@ -1,11 +1,11 @@
-const {
+import {
   request, summary, query, tags, responses, description,
-} = require('koa-swagger-decorator');
-const Mock = require('mockjs');
+} from 'koa-swagger-decorator';
+import Mock from 'mockjs';
 
 const tag = tags(['home']);
 
-class HomeRouter {
+export default class HomeRouter {
   @request('GET', '/homes')
   @summary('测试GET接口')
   @description('测试home接口')
@@ -24,10 +24,9 @@ class HomeRouter {
         createDate: Mock.Random.datetime(),
       }],
     });
-    /* 设置response header */
+      /* 设置response header */
     ctx.set('x-total-count', '10');
     /* 返回数据 */
     ctx.body = data.list;
   }
 }
-module.exports = HomeRouter;

@@ -1,9 +1,11 @@
 import axios from 'axios';
 
 import TranslatorContext from 'shared/util/translator-context';
+import environment from 'config/environment.json';
 
+const namespace = 'locale';
 export const ACTION_TYPES = {
-  SET_LOCALE: 'locale/SET_LOCALE',
+  SET_LOCALE: `${namespace}/SET_LOCALE`,
 };
 
 const initialState = {
@@ -30,7 +32,7 @@ export default (state: LocaleState = initialState, action): LocaleState => {
 
 export const setLocale = (locale) => async (dispatch) => {
   if (!Object.keys(TranslatorContext.context.translations).includes(locale)) {
-    const response = await axios.get(`i18n/${locale}.json?buildTimestamp=${process.env.BUILD_TIMESTAMP}`, { baseURL: '' });
+    const response = await axios.get(`${environment.PUBLIC_URL}/i18n/${locale}.json?buildTimestamp=${process.env.BUILD_TIMESTAMP}`, { baseURL: '' });
     TranslatorContext.registerTranslations(locale, response.data);
   }
   dispatch({

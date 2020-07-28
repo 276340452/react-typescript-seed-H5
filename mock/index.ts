@@ -1,10 +1,10 @@
-const Koa = require('koa');
-const convert = require('koa-convert');
-const logger = require('koa-logger');
-const bodyParser = require('koa-bodyparser');
+import Koa from 'koa';
+import convert from 'koa-convert';
+import logger from 'koa-logger';
+import bodyParser from 'koa-bodyparser';
+import router from './routes';
 
 const app = new Koa();
-const router = require('./routes');
 
 app
   /* 使用日志中间件 */
