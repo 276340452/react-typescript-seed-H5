@@ -4,6 +4,9 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
+    "env:dev": "cross-env NODE_ENV=development node node_env.js",
+    "env:pro": "cross-env NODE_ENV=production node node_env.js",
+    "env:alpha": "cross-env NODE_ENV=alpha node node_env.js",
     "prebuild": "npm run theme",
     "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
     "prealpha": "npm run theme",
