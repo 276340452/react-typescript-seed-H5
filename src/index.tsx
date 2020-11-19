@@ -6,14 +6,12 @@ import 'antd-mobile/dist/antd-mobile.css';
 import 'assets/scss/index.scss';
 
 import initStore from 'config/store';
-import { registerLocale } from 'config/translation';
 import setupAxiosInterceptors from 'config/axios-interceptor';
 import { loadIcons } from 'config/icon-loader';
 import * as serviceWorker from 'serviceWorker';
 import App from './App';
 
 const store = initStore();
-registerLocale(store);
 setupAxiosInterceptors();
 loadIcons();
 
