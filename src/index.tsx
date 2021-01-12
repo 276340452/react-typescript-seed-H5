@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import moment from 'moment';
-import 'antd-mobile/dist/antd-mobile.css';
 import 'assets/scss/index.scss';
 
 import initStore from 'config/store';

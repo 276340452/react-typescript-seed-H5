@@ -1,6 +1,5 @@
 #!/bin/bash
-npm config set registry http://npm.yematech.cn/
-npm install
+npm install --registry=http://npm.yematech.cn --sass-binary-site=http://npm.taobao.org/mirrors/node-sass
 if [[ $1 = 'alpha' ]];
 then
   npx cross-env npm run env:alpha && npm run build
